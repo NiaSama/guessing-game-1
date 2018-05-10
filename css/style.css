@@ -1,5 +1,40 @@
+/* pagewide */
+
 body {
   background: pink;
+  font-size: 16px;
   color: #404040;
   font-family:  Tahoma, sans-serif;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* headings and paragraphs */
+
+h1, h2, h3, p {
+  margin: 10px auto 20px auto;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.4em;
+  color: #910059;
+}
+
+/* other structures */
+
+#questions {
+  border: 10px dotted #910059;
+  padding: 20px;
+  margin: 0 auto;
 }
