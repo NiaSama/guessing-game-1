@@ -16,8 +16,3 @@ An "About Me" guessing game that asks the user yes/no questions about me (Hannah
 
 ## License
 - Basic MIT license.
-
-## Notes
-- Syntax errors break everything
-- My actual code didn't follow the same logic as my pseudocode
-- It was easy to do all five questions once I wrote one
