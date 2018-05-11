@@ -1,5 +1,5 @@
 # About Me Guessing Game
-An "About Me" guessing game that asks the user yes/no questions about me (Hannah Sindorf) and gives a response based on whether or not the user is correct.
+An "About Me" guessing game that asks the user various questions about me (Hannah Sindorf) and gives a response based on whether or not the user is correct. 
 
 ## Setup
 1. Open Git Bash.
@@ -12,7 +12,10 @@ An "About Me" guessing game that asks the user yes/no questions about me (Hannah
 ## Instructions
 1. Follow the on-screen prompts to proceed through the program.
 2. Enter your name when prompted.
-3. Enter _yes_ or _no_ to answer the guessing game questions when prompted. You must answer _yes_ or _no_ for the program to correctly evaluate your answer.
+3. Enter _yes_ or _no_ to answer the guessing game questions (questions 1-5) when prompted. You must answer _yes_ or _no_ for the program to correctly evaluate your answer.
+4. Enter a number between 1 and 10 when prompted to guess a random number (question 6).
+5. Enter the name of a bird species when prompted to guess a bird species (question 7).
+6. When finished with the quiz, you will be told your results and be brought to a page with additional information.
 
 ## License
 - Basic MIT license.

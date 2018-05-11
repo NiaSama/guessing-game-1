@@ -1,6 +1,5 @@
 'use strict';
 var userPoints = 0;
-userPoints;
 // variable to store questions, their correct answers, and a short blurb about the question
 var questions = [
   ['Hannah\'s favorite animals are dogs.', 'no', 'Hannah loves parrots more than any other animal and has five of them. But she does also have a dog, so that doesn\'t mean she doesn\'t love dogs.'],
@@ -10,7 +9,7 @@ var questions = [
   ['Hannah\'s favorite food is curry.', 'yes', 'Hannah loves most types of curry, but her favorite is Japanese curry. Japanese curry seems to taste almost exactly the same no matter who makes it.']
 ];
 // Welcome messages, getting name
-alert('Welcome! In this game, you will be given a fact and asked whether or not you think it is a real fact about me (Hannah!).');
+alert('Welcome! In this game, you will be given a fact and asked whether or not you think it is a real fact about me (Hannah!). Then, there are a couple of fun add-on questions!');
 var userName = prompt('To get started, please enter your name.');
 alert('Thanks, ' + userName + '! I hope you are excited to learn a little bit about me. To answer the following questions, please type \'Yes\' or \'No\'. Here comes the first question!');
 // Questions 1-5: Yes/No Questions
@@ -24,13 +23,11 @@ for (let i = 1; i < questions.length + 1; i++) {
     alert('Incorrect!  ' + questions[i - 1][2]);
   }
   console.log('Question ' + i + ': User answered ' + answer + '. The answer was ' + questions[i - 1][1] + '.');
-  if (i < questions.length) {
-    alert('You now have ' + userPoints + ' points!');
-  }
+  alert('You now have ' + userPoints + ' points!');
 }
 // Question 6: number guessing
-var randomNumber = Math.floor(5 * Math.random()) + 1;
-var guessNumber = prompt('Quick! I\'m thinking of a number between 1 and 5! Try guessing what it is! You only have 4 tries.');
+var randomNumber = Math.floor(10 * Math.random()) + 1;
+var guessNumber = prompt('Quick! I\'m thinking of a number between 1 and 10! Try guessing what it is! You only have 4 tries.');
 console.log('Random number guess 1: User guessed ' + guessNumber + '.');
 for (let i = 1; i < 4; i++) {
   if (Number(guessNumber) === randomNumber) {
@@ -54,10 +51,10 @@ if (Number(guessNumber) === randomNumber) {
 }
 // Question 7: Multiple Correct Answers Question
 var typesOfBirds = ['parrot', 'cockatiel', 'lovebird', 'peach-faced lovebird', 'peach faced lovebird', 'ringneck', 'indian ringneck', 'conure', 'green-cheeked conure', 'green-cheek conure', 'green cheeked conure', 'green cheek conure'];
-var guessBird = prompt('Last question, ' + userName + '! Home stretch! Can you guess one of the species of birds that I have?').toLowerCase();
+var guessBird = prompt('Last question, ' /*+ userName*/ + '! Home stretch! Can you guess one of the species of birds that I have?').toLowerCase();
 var guessedBird = false;
 console.log('Type of bird guess 1: User guessed ' + guessBird + '.');
-for (let i = 1; i < 6; i++) {
+for (let i = 1; i < 7; i++) {
   for(let j = 1; j < typesOfBirds.length; j++) {
     typesOfBirds[j - 1];
     if (guessBird === typesOfBirds[j - 1]) {
@@ -65,7 +62,7 @@ for (let i = 1; i < 6; i++) {
       break;
     }
   }
-  if (!(guessedBird)) {
+  if (!(guessedBird) && i !== 6) {
     guessBird = prompt('Nope! Guess again!');
     console.log('Type of bird guess ' + (i + 1) + ': User guessed ' + guessBird + '.');
   } else break;

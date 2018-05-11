@@ -35,6 +35,10 @@ ul li {
   list-style: circle inside;
 }
 
+ol li {
+  list-style: decimal inside;
+}
+
 /* box-level styles */
 
 .box {
