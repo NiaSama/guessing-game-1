@@ -1,5 +1,6 @@
 'use strict';
 var userPoints = 0;
+userPoints;
 // variable to store questions, their correct answers, and a short blurb about the question
 var questions = [
   ['Hannah\'s favorite animals are dogs.', 'no', 'Hannah loves parrots more than any other animal and has five of them. But she does also have a dog, so that doesn\'t mean she doesn\'t love dogs.'],
@@ -29,21 +30,21 @@ for (let i = 1; i < questions.length + 1; i++) {
 }
 // Question 6: number guessing
 var randomNumber = Math.floor(5 * Math.random()) + 1;
-var guess = prompt('Quick! I\'m thinking of a number between 1 and 5! Try guessing what it is! You only have 4 tries.');
-console.log('Random number guess 1: User guessed ' + guess + '.');
+var guessNumber = prompt('Quick! I\'m thinking of a number between 1 and 5! Try guessing what it is! You only have 4 tries.');
+console.log('Random number guess 1: User guessed ' + guessNumber + '.');
 for (let i = 1; i < 4; i++) {
-  if (Number(guess) === randomNumber) {
+  if (Number(guessNumber) === randomNumber) {
     break;
   }
-  else if (guess > randomNumber) {
-    guess = prompt('Sorry, too high! Try again!');
+  else if (guessNumber > randomNumber) {
+    guessNumber = prompt('Sorry, too high! Try again!');
   }
   else {
-    guess = prompt('Uh oh, too low! Try again!');
+    guessNumber = prompt('Uh oh, too low! Try again!');
   }
-  console.log('Random number guess ' + (i + 1) + ': User guessed ' + guess + '.');
+  console.log('Random number guess ' + (i + 1) + ': User guessed ' + guessNumber + '.');
 }
-if (Number(guess) === randomNumber) {
+if (Number(guessNumber) === randomNumber) {
   alert('Great! You got it! Anyway, moving on!');
   userPoints++;
   console.log('Question 6: User was able to correctly guess the random number, ' + randomNumber + '.');
@@ -52,8 +53,37 @@ if (Number(guess) === randomNumber) {
   console.log('Question 6: User was not able to correctly guess the random number, ' + randomNumber + '.');
 }
 // Question 7: Multiple Correct Answers Question
-
-// Final Score
+var typesOfBirds = ['parrot', 'cockatiel', 'lovebird', 'peach-faced lovebird', 'peach faced lovebird', 'ringneck', 'indian ringneck', 'conure', 'green-cheeked conure', 'green-cheek conure', 'green cheeked conure', 'green cheek conure'];
+var guessBird = prompt('Last question, ' + userName + '! Home stretch! Can you guess one of the species of birds that I have?').toLowerCase();
+var guessedBird = false;
+console.log('Type of bird guess 1: User guessed ' + guessBird + '.');
+for (let i = 1; i < 6; i++) {
+  for(let j = 1; j < typesOfBirds.length; j++) {
+    typesOfBirds[j - 1];
+    if (guessBird === typesOfBirds[j - 1]) {
+      guessedBird = true;
+      break;
+    }
+  }
+  if (!(guessedBird)) {
+    guessBird = prompt('Nope! Guess again!');
+    console.log('Type of bird guess ' + (i + 1) + ': User guessed ' + guessBird + '.');
+  } else break;
+}
+if (guessedBird) {
+  userPoints++;
+  console.log('Question 7: User was able to correctly guess one of the types of birds, ' + guessBird);
+  if (guessBird === 'parrot') {
+    alert('It is true that I have parrots... however, there are many different species of parrots! I have four different kinds: an Indian ringneck, a cockatiel, a green-cheeked conure, and two peach-faced lovebirds.');
+  } else {
+    alert('Correct! I have four different kinds of parrots: an Indian ringneck, a cockatiel, a green-cheeked conure, and two peach-faced lovebirds.');
+  }
+} else {
+  alert('Sorry, you ran out of guesses! For your information, I have four different kinds: an Indian ringneck, a cockatiel, a green-cheeked conure, and two peach-faced lovebirds.');
+  console.log('Question 7: User was not able to correctly guess one of the types of birds.');
+}
+// Tally up and deliver the final score
+alert('Alright! Are you ready to see how you did, ' + userName + '?');
 if (userPoints === (questions.length + 2)) {
   alert('Wow! you got 100%! Great job!');
 }
