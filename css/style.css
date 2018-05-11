@@ -1,4 +1,4 @@
-/* pagewide */
+/* pagewide styles */
 
 body {
   background: pink;
@@ -6,13 +6,13 @@ body {
   color: #404040;
   font-family:  Tahoma, sans-serif;
   text-align: center;
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
 }
 
-/* headings and paragraphs */
+/* text-related styles */
 
-h1, h2, h3, p {
+h1, h2, h3, p, li {
   margin: 10px auto 20px auto;
 }
 
@@ -31,10 +31,19 @@ h3 {
   color: #910059;
 }
 
-/* other structures */
+ul li {
+  list-style: circle inside;
+}
 
-#questions {
-  border: 10px dotted #910059;
+/* box-level styles */
+
+.box {
+  border-top: 20px solid #910059;
+  border-image: linear-gradient(to left, pink,#910059, pink) 5;
   padding: 20px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
+}
+
+.box:last-child {
+  border-bottom: 20px solid #910059;
 }

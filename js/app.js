@@ -1,72 +1,66 @@
 'use strict';
-console.log('a');
 var userPoints = 0;
-// intro
+// variable to store questions, their correct answers, and a short blurb about the question
+var questions = [
+  ['Hannah\'s favorite animals are dogs.', 'no', 'Hannah loves parrots more than any other animal and has five of them. But she does also have a dog, so that doesn\'t mean she doesn\'t love dogs.'],
+  ['Hannah loves video games and plays them whenever she has a chance.', 'yes', 'Hannah plays video games way too often! She enjoys all genres of games and does not discriminate.'],
+  ['Hannah studied computer science in university.', 'no', 'Hannah did not study computer science in university - she actually studied linguistics. Fun fact - linguistics is not studying how to speak multiple languages as most people seem to think (although it can involve studying languages) but rather the study of language itself. This can include breaking down the grammar of multiple languages to find common structure, documenting and studying how people acquire language, reconstructing extinct languages, and so on...'],
+  ['Hannah can speak more than one language.', 'yes', 'This was kind of a trick question. Hannah speaks English (fluently), Japanese (fairly well), and Hebrew (poorly).'],
+  ['Hannah\'s favorite food is curry.', 'yes', 'Hannah loves most types of curry, but her favorite is Japanese curry. Japanese curry seems to taste almost exactly the same no matter who makes it.']
+];
+// Welcome messages, getting name
 alert('Welcome! In this game, you will be given a fact and asked whether or not you think it is a real fact about me (Hannah!).');
 var userName = prompt('To get started, please enter your name.');
 alert('Thanks, ' + userName + '! I hope you are excited to learn a little bit about me. To answer the following questions, please type \'Yes\' or \'No\'. Here comes the first question!');
-// Q1
-var questionOne = prompt('Yes or No: Hannah\'s favorite animals are dogs.').toLowerCase();
-if (questionOne === 'no' || questionOne === 'n') {
-  alert('Correct! Hannah loves parrots more than any other animal and has five of them. But she does also have a dog, so that doesn\'t mean she doesn\'t love dogs.');
+// Questions 1-5: Yes/No Questions
+for (let i = 1; i < questions.length + 1; i++) {
+  let answer = prompt('Yes or No: ' + questions[i - 1][0]).toLowerCase();
+  if (answer === questions[i - 1][1] || answer === questions[i - 1][1].charAt(0)) {
+    userPoints++;
+    alert('Correct! ' + questions[i - 1][2]);
+  }
+  else {
+    alert('Incorrect!  ' + questions[i - 1][2]);
+  }
+  console.log('Question ' + i + ': User answered ' + answer + '. The answer was ' + questions[i - 1][1] + '.');
+  if (i < questions.length) {
+    alert('You now have ' + userPoints + ' points!');
+  }
+}
+// Question 6: number guessing
+var randomNumber = Math.floor(5 * Math.random()) + 1;
+var guess = prompt('Quick! I\'m thinking of a number between 1 and 5! Try guessing what it is! You only have 4 tries.');
+console.log('Random number guess 1: User guessed ' + guess + '.');
+for (let i = 1; i < 4; i++) {
+  if (Number(guess) === randomNumber) {
+    break;
+  }
+  else if (guess > randomNumber) {
+    guess = prompt('Sorry, too high! Try again!');
+  }
+  else {
+    guess = prompt('Uh oh, too low! Try again!');
+  }
+  console.log('Random number guess ' + (i + 1) + ': User guessed ' + guess + '.');
+}
+if (Number(guess) === randomNumber) {
+  alert('Great! You got it! Anyway, moving on!');
   userPoints++;
+  console.log('Question 6: User was able to correctly guess the random number, ' + randomNumber + '.');
+} else {
+  alert('Sorry, you\'re out of guesses! Moving on!');
+  console.log('Question 6: User was not able to correctly guess the random number, ' + randomNumber + '.');
 }
-else {
-  alert('Incorrect! Too bad! Hannah loves parrots more than any other animal and has five of them. But she does also have a dog, so that doesn\'t mean she doesn\'t love dogs.');
+// Question 7: Multiple Correct Answers Question
+
+// Final Score
+if (userPoints === (questions.length + 2)) {
+  alert('Wow! you got 100%! Great job!');
 }
-console.log('Question 1: User answered ' + questionOne + '. The answer was no.');
-alert('Okay, ' + userName + '. Moving on.');
-// Q2
-var questionTwo = prompt('Yes or No: Hannah loves video games and plays them whenever she has a chance.').toLowerCase();
-if (questionTwo === 'yes' || questionTwo === 'y') {
-  alert('Correct! Hannah plays video games way too often! She enjoys all genres of games and does not discriminate.');
-  userPoints++;
-}
-else {
-  alert('Incorrect! If only that were the case! Hannah plays video games too much. She enjoys all genres of games and does not discriminate.');
-}
-console.log('Question 2: User answered ' + questionTwo + '. The answer was yes.');
-alert('Okay, ' + userName + '. You have ' + userPoints + ' point(s) so far. Let\'s keep going!');
-// Q3
-var questionThree = prompt('Yes or No: Hannah studied computer science in university.').toLowerCase();
-if (questionThree === 'no' || questionThree === 'n') {
-  alert('Correct! Hannah did not study computer science in university - she actually studied linguistics. Fun fact - linguistics is not studying how to speak multiple languages as most people seem to think (although it can involve studying languages) but rather the study of language itself. This can include breaking down the grammar of multiple languages to find common structure, documenting and studying how people acquire language, reconstructing extinct languages, and so on...');
-  userPoints++;
-}
-else {
-  alert('Incorrect! Hannah did not study computer science in university - she actually studied linguistics. Fun fact - linguistics is not studying how to speak multiple languages as most people seem to think (although it can involve studying languages) but rather the study of language itself. This can include breaking down the grammar of multiple languages to find common structure, documenting and studying how people acquire language, reconstructing extinct languages, and so on...');
-}
-console.log('Question 3: User answered ' + questionThree + '. The answer was no.');
-alert('I hope you learned something new, ' + userName + '. You have ' + userPoints + ' point(s) now. The next question is related to the last one.');
-// Q4
-var questionFour = prompt('Yes or No: Hannah can speak more than one language.').toLowerCase();
-if (questionFour === 'yes' || questionFour === 'y') {
-  alert('Correct! This was kind of a trick question. Hannah speaks English (fluently), Japanese (fairly well), and Hebrew (poorly).');
-  userPoints++;
-}
-else {
-  alert('Incorrect! This was kind of a trick question. Hannah speaks English (fluently), Japanese (fairly well), and Hebrew (poorly).');
-}
-console.log('Question 4: User answered ' + questionFour + '. The answer was yes.');
-alert('We\'re almost there, ' + userName + '. Keep going!');
-// Q5
-var questionFive = prompt('Yes or No: Hannah\'s favorite food is curry.').toLowerCase();
-if (questionFive === 'yes' || questionFive === 'y') {
-  alert('Correct! Hannah loves most types of curry, but her favorite is Japanese curry. Japanese curry seems to taste almost exactly the same no matter who makes it.');
-  userPoints++;
-}
-else {
-  alert('Incorrect! Hannah loves most types of curry, but her favorite is Japanese curry. Japanese curry seems to taste almost exactly the same no matter who makes it.');
-}
-console.log('Question 5: User answered ' + questionFive + '. The answer was yes.');
-// Final score
-if (userPoints === 5) {
-  alert('Wow! you got 100%! You must be some kind of mind reader!');
-}
-else if (userPoints > 0 && userPoints < 5) {
-  alert('You only got ' + userPoints + '/5 questions right. We should hang out more!');
+else if (userPoints > 0 && userPoints < (questions.length + 2)) {
+  alert('You only got ' + userPoints + '/' + (questions.length + 2) + ' questions right. We should hang out more!');
 }
 else {
   alert('You got no points! Are you sure we\'ve met before?');
 }
-console.log('User got ' + userPoints + ' point(s).');
+console.log('User got ' + userPoints + ' point(s) out of ' + (questions.length + 2) + ' possible points.');
