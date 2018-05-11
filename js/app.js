@@ -1,5 +1,4 @@
 'use strict';
-console.log('a');
 var userPoints = 0;
 // intro
 alert('Welcome! In this game, you will be given a fact and asked whether or not you think it is a real fact about me (Hannah!).');
