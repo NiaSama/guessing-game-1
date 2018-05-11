@@ -3,11 +3,11 @@ An "About Me" guessing game that asks the user yes/no questions about me (Hannah
 
 ## Setup
 1. Open Git Bash.
-2. Make and change to a new directory by entering **mkdir <directory>** and then **cd <directory>** in Git Bash.
+2. Make and change to a new directory by entering **mkdir (directory)** and then **cd (directory)** in Git Bash.
 3. Copy the repository URL.
-4. Clone the URL entering **git clone <URL>**.
-5. Navigate to the cloned directory by entering **cd <directory>** in Git Bash.
-6. Open the html file by entering **explorer <index.html>** in Git Bash.
+4. Clone the URL entering **git clone (URL)**.
+5. Navigate to the cloned directory by entering **cd (directory)** in Git Bash.
+6. Open the html file by entering **explorer (index.html)** in Git Bash.
 
 ## Instructions
 1. Follow the on-screen prompts to proceed through the program.
