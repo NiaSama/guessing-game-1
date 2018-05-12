@@ -1,6 +1,10 @@
 # About Me Guessing Game
 An "About Me" guessing game that asks the user various questions about me (Hannah Sindorf) and gives a response based on whether or not the user is correct. 
 
+## Contributors
+- Hannah Sindorf
+- Tanya Wickham
+
 ## Setup
 1. Open Git Bash.
 2. Make and change to a new directory by entering **mkdir (directory)** and then **cd (directory)** in Git Bash.
